@@ -1,0 +1,68 @@
+/* Welcome.css */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #fff8e1; /* Light warm background */
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    padding: 20px;
+}
+
+.brand-name {
+    color: #ff8c00; /* Primary orange color */
+    font-weight: bold;
+}
+
+.main-content {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    background: #ffefd5; /* Light orange/peach background */
+    border-radius: 8px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.features-list li {
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff8c00;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff7043;
+}
+
+.cta-button.secondary {
+    background-color: #333;
+}
+
+.cta-button.secondary:hover {
+    background-color: #555;
+}
