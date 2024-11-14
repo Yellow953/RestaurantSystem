@@ -41,6 +41,15 @@ class BurgerController extends Controller
         return response()->json(['message' => 'Burger updated successfully', 'burger' => $burger], 200);
     }
 
+    public function show($id)
+    {
+        $burger = Burger::find($id);
+        if (!$burger) {
+            return response()->json(['message' => 'Burger not found'], 404);
+        }
+        return response()->json($burger);
+    }
+
     public function destroy($id)
     {
         $burger = Burger::findOrFail($id);

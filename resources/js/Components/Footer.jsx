@@ -5,19 +5,25 @@ const Footer = () => {
     return (
         <footer style={styles.footer}>
             <div style={styles.footerContent}>
+                <div style={styles.footerLogo}>
+                    <img src="images/logo.png" alt="" />
+                </div>
                 <p style={styles.footerText}>
                     © 2024 WebifyIQ. All rights reserved.
                 </p>
                 <div style={styles.footerLinks}>
-                    <a href="/about" style={styles.footerLink}>
-                        About Us
-                    </a>
-                    <a href="/contact" style={styles.footerLink}>
-                        Contact
-                    </a>
-                    <a href="/privacy" style={styles.footerLink}>
-                        Privacy Policy
-                    </a>
+                    <Link to="/" style={styles.footerLink}>
+                        Home
+                    </Link>
+                    <Link to="/burgers" style={styles.footerLink}>
+                        Burgers
+                    </Link>
+                    <Link to="/orders" style={styles.footerLink}>
+                        Orders
+                    </Link>
+                    <Link to="/account" style={styles.footerLink}>
+                        Account
+                    </Link>
                 </div>
             </div>
         </footer>
@@ -56,6 +62,10 @@ const styles = {
     },
     footerLinkHover: {
         color: "#fff",
+    },
+    footerLogo: {
+        width: "25%",
+        marginBottom: "20px",
     },
 };
 

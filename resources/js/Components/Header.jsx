@@ -19,8 +19,8 @@ const Header = () => {
                         </Link>
                     </li>
                     <li style={styles.navItem}>
-                        <Link to="/burgers" style={styles.navLink}>
-                            Burgers
+                        <Link to="/menu" style={styles.navLink}>
+                            Menu
                         </Link>
                     </li>
                     <li style={styles.navItem}>

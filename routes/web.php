@@ -6,7 +6,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
-});
+})->name('home');
 
 Route::middleware(['auth'])->group(function () {
     // Customer routes
@@ -32,10 +32,6 @@ Route::middleware(['auth'])->group(function () {
         })->name('manage.users');
     });
 });
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->group(function () {
     // Customer Routes
     Route::middleware('role:customer')->group(function () {
+        Route::get('/burgers/{burger}', [BurgerController::class, 'show']);
         Route::get('/burgers', [BurgerController::class, 'index']);
         Route::post('/orders', [OrderController::class, 'store']);
     });
