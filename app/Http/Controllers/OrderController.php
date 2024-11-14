@@ -11,26 +11,23 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'items' => 'required|array', // Array of items in the order
-            'items.*.burger_id' => 'required|exists:burgers,id', // Burger ID should exist
-            'items.*.quantity' => 'required|integer|min:1', // Quantity must be positive
+            'items' => 'required|array',
+            'items.*.burger_id' => 'required|exists:burgers,id',
+            'items.*.quantity' => 'required|integer|min:1',
         ]);
 
-        // Calculate the total price of the order
         $totalPrice = 0;
         foreach ($validated['items'] as $item) {
             $burger = Burger::find($item['burger_id']);
             $totalPrice += $burger->price * $item['quantity'];
         }
 
-        // Create the order
         $order = Order::create([
             'user_id' => auth()->id(),
             'total_price' => $totalPrice,
             'status' => 'pending',
         ]);
 
-        // Add items to the order
         foreach ($validated['items'] as $item) {
             $burger = Burger::find($item['burger_id']);
             $order->items()->create([
